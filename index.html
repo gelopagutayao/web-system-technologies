@@ -1,0 +1,86 @@
+<head>
+
+<!--My CSS-->
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 50px;
+  border: 1px solid black;
+  background-color: #cfcccc;
+}
+body {
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #f3eeee;
+}
+button{
+    background-color: #f5a741;
+}
+.button:hover {background-color: #3e8e41}
+
+
+th{
+    position: relative;
+    text-align: left ;
+    width: 100%;
+}
+td{
+    width: 80%;
+}
+</style>
+</head>
+
+
+<body>
+<h1>Student registration Form</h1>
+<form>
+    <table style="size: 10px;">
+        <tr>
+            <th><label for="FirstName">First Name</label></th>
+            <td><input type="email"  placeholder="First Name" size="200"></td>
+        </tr>
+        <tr>
+            <th><label for="LastName">Last Name</label></th>
+            <td><input type="email"  placeholder="Last Name"  size="200"></td>
+        </tr>
+        <tr>
+            <th><label for="Email" >Email</label></th>
+            <td><input type="email"id="Email" placeholder="Email"  size="200"></td>
+        </tr>
+        <tr>
+            <th><label for="Gender">Gender</label></th>
+            <td><select name="Gender"  id="Gender">
+                <option value="Gender">Male</option>
+                <option value="Gender">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="Date">Date Of Birth</label></th>
+            <td><input type="Date" placeholder="Date"></td>
+        </tr>
+        <tr>
+            <th><label for="fname">Address</label></th>
+            <td><input type="Address" placeholder="Address"  size="200"></td>
+        </tr>
+        <tr>
+            <th><label for="City" >City</label></th>
+            <td><input type="City" placeholder="City"  size="200"></td>
+        </tr>
+        <tr>
+            <th><label for="Zipcode" >Zipcode</label></th>
+            <td><input type="Zipcode" placeholder="Zipcode"  size="200"></td>
+        </tr>
+        <th></th>
+        <td><button type="submit" class="button">Submit</button></td>
+    </table>
+</form>
+</body>
+
+
+</html>
