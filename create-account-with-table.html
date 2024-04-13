@@ -7,38 +7,34 @@
     <link href="./dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body class="bg-gradient-to-r  from-sky-500 to-indigo-500">
+<body class="bg-indigo-300">
     <div class="flex mt-20">
-        <div class="bg-indigo-100 dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
-            <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">Create Account!</h1>
+        <div class="shadow-lg rounded-lg px-8 py-6 bg-white">
+            <h1 class="text-2xl font-bold text-center mb-4">Create Account!</h1>
                 <div class="mb-4">
-                    <label  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                    <label  class="block text-sm font-medium text-gray-700 mb-2">Name</label>
                     <input  id="name" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Name">
                 </div>
                 <div class="mb-4">
-                    <label  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                    <label  class="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input  id="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Email">
                 </div>
                 <div class="mb-4">
-                    <label  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Role</label>
-                    <select class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Role">
+                    <label  class="block text-sm font-medium text-gray-700 mb-2">Role</label>
+                    <select id="role" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Role">
                         <option>Admin</option>
                         <option>User</option>  
                     </select>
                 </div>
-                <div class="flex items-center justify-between mb-4">
-                </div>
-                <button onclick="alert('Account Successfully Created') "type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create Account</button>
-            </form>
+                <button onclick="addUser()" type="button" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create Account</button>
         </div>
-    
 
-        <div class="bg-indigo-100 dark:bg-gray-900 shadow-md rounded-lg container mx-auto">
+        <div class="shadow-xl rounded-lg container mx-auto bg-white">
             <div class="p-4 flex">
-                <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">User List</h1>
+                <h1 class="text-2xl font-bold text-center mb-4">User List</h1>
             </div>
             <div class="px-3 py-4 flex justify-center">
-                <table class="w-full text-md bg-white shadow-md rounded mb-4">
+                <table id="userTable" class="w-full text-md bg-white shadow-md rounded mb-4">
                     <tbody>
                         <tr class="border-b">
                             <th class="text-left p-3 px-5">ID</th>
@@ -49,51 +45,10 @@
                             <th class="text-left p-3 px-5">Actions</th>
                             <th></th>
                         </tr>
-                        <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                            <td class="p-3 px-5"><input type="text" value="1" class="bg-transparent"></td>
-                            <td class="flex-shrink-0 w-10 h-10 p-3 px-5"><img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt=""></td>
-                            <td class="p-3 px-5"><input type="text" value="Gelo Pagutayao" class="bg-transparent"></td>
-                            <td class="p-3 px-5"><input type="text" value="gelo.P@gmail.com" class="bg-transparent"></td>
-                            <td class="p-3 px-5">
-                                <select  value="user.role" class="bg-transparent">
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
-                                  
-                                </select>
-                            </td>
-                            <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-                        <tr class="border-b hover:bg-orange-100">
-                            <td class="p-3 px-5"><input type="text" value="2" class="bg-transparent"></td>
-                            <td class="flex-shrink-0 w-10 h-10 p-3 px-5"><img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt=""></td>
-                            <td class="p-3 px-5"><input type="text" value="John doe" class="bg-transparent"></td>
-                            <td class="p-3 px-5"><input type="text" value="doejhon@gmail.com" class="bg-transparent"></td>
-                            <td class="p-3 px-5">
-                                <select value="user.role" class="bg-transparent">
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
-                                </select>
-                            </td>
-                            <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"><i class="fa-solid fa-trash"></i></button></td>
-                            <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                                <td class="p-3 px-5"><input type="text" value="3" class="bg-transparent"></td>
-                                <td class="flex-shrink-0 w-10 h-10 p-3 px-5"><img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt=""></td>
-                                <td class="p-3 px-5"><input type="text" value="SAna Pasar Kooh" class="bg-transparent"></td>
-                                <td class="p-3 px-5"><input type="text" value="Uno.Please@gmail.com" class="bg-transparent"></td>
-                                <td class="p-3 px-5">
-                                    <select value="user.role" class="bg-transparent">
-                                        <option value="user">User</option>
-                                        <option value="admin">Admin</option>
-                                        
-                                    </select>
-                                </td>
-                                <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <script src="https://kit.fontawesome.com/89c7a7f5e7.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </body>
 </html>
