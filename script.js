@@ -20,6 +20,10 @@ function showAlert() {
     return true;
 }
 
+const createAccButton = document.getElementById('accbtn');
+
+createAccButton.addEventListener('click', appendValues);
+
 function appendValues() {
     if (!showAlert()) {
         return; 
@@ -37,7 +41,6 @@ function appendValues() {
                         <td class="p-3 px-5">${role}</td>
                         <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="editRow(this)"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>`;
 
- 
     document.getElementById('name').value = "";
     document.getElementById('email').value = "";
     document.getElementById('role').value = "";
@@ -46,7 +49,7 @@ function appendValues() {
 function deleteRow(row) {
     var i = row.parentNode.parentNode.rowIndex;
     document.getElementById('userTable').deleteRow(i);
-    alert("Kung Ako nalang Diay");
+    alert("Are you sure you want to delete?");
 }
 
 function editRow(row) {
@@ -61,8 +64,6 @@ function editRow(row) {
     document.getElementById('name').value = name;
     document.getElementById('email').value = email;
     document.getElementById('role').value = role;
-    
  
-  
     table.deleteRow(i);
 }
