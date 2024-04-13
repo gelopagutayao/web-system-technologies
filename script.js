@@ -1,4 +1,29 @@
-function addUser() {
+function showAlert() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var role = document.getElementById('role').value;
+
+    if (name === "") {
+        alert("Please Input Name");
+        return false;
+    }
+    if (email === ""){
+        alert("Please Input Email")
+        return false;
+    }
+
+    if (role === ""){
+        alert("Please Choose your Role")
+        return false;
+    }
+
+    return true;
+}
+
+function appendValues() {
+    if (!showAlert()) {
+        return; 
+    }
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var role = document.getElementById('role').value;
@@ -10,20 +35,34 @@ function addUser() {
                         <td class="p-3 px-5">${name}</td>
                         <td class="p-3 px-5">${email}</td>
                         <td class="p-3 px-5">${role}</td>
-                        <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-white-500 hover:bg-blue-700 text-white py-1 px-2 rounded  focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline" onclick="deleteUser(this)"><i class="fa-solid fa-trash"></i></button></td>`;
+                        <td class="p-3 px-5 flex"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="editRow(this)"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>`;
+
+ 
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('role').value = "";
 }
 
-function deleteUser(row) {
+function deleteRow(row) {
     var i = row.parentNode.parentNode.rowIndex;
     document.getElementById('userTable').deleteRow(i);
+    alert("Kung Ako nalang Diay");
 }
 
-function Edit(row) {
+function editRow(row) {
+    alert("Edit Current Display In Left Table")
+    var createaccount = "Edit Current Account"
     var i = row.parentNode.parentNode.rowIndex;
     var table = document.getElementById('userTable');
-    var cells = table.rows[i].cells;
+    var name = table.rows[i].cells[2].innerHTML;
+    var email = table.rows[i].cells[3].innerHTML;
+    var role = table.rows[i].cells[4].innerHTML;
 
-    for (var j = 2; j < cells.length - 1; j++) {
-        cells[j].setAttribute('contenteditable', 'true');
-    }
+    document.getElementById('name').value = name;
+    document.getElementById('email').value = email;
+    document.getElementById('role').value = role;
+    
+ 
+  
+    table.deleteRow(i);
 }
