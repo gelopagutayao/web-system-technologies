@@ -1,22 +1,7 @@
 {
-  "name": "web-system-technologies",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gelopagutayao/web-system-technologies.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gelopagutayao/web-system-technologies/issues"
-  },
-  "homepage": "https://github.com/gelopagutayao/web-system-technologies#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
   }
 }
